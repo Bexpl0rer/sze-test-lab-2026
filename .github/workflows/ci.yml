@@ -2,23 +2,26 @@ name: python_teszt
 on:
   push:
     branches: [ main ]
-  pull-request:
+  pull_request:
     branches: [ main ]
 jobs:
   test:
    runs-on: ubuntu-latest
   
   steps:
-    -name: Checkout repository
+    - name: Checkout repository
     uses: actions/checkout@v4
 
-    -name: Setup Python
+    - name: Setup python
     uses: actions/setup-python@v4
 
-    -name: Függőségek
+    - name: Függőségek
     run: pip install -r requirements.txt
 
-    -name: Test
+    - name: Test
     run: pytest -v
+    
+
+    
 
     
